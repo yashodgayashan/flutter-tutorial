@@ -13,6 +13,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("Hi"),);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dropdown Button"),
+      ),
+      body: Container(
+        child: DropdownButton(items: null, onChanged: null),
+      )
+    );
   }
 }
