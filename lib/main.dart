@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  title: "Tutorial",
-  home: Home(),
-));
+      title: "Tutorial",
+      home: Home(),
+    ));
 
 class Home extends StatefulWidget {
   @override
@@ -13,6 +13,15 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("Hi"),);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Flutter tutorial"),
+      ),
+      body: Center(
+          child: Text(
+        "Lets code",
+        style: TextStyle(fontSize: 20.0),
+      )),
+    );
   }
 }
