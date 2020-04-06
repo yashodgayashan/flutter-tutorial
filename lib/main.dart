@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  title: "Tutorial",
-  home: Home(),
-));
+      title: "Tutorial",
+      home: Home(),
+    ));
 
 class Home extends StatefulWidget {
   @override
