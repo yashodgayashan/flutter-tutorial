@@ -218,3 +218,44 @@ class _HomeState extends State<Home> {
 
 ### Let's Remove the underline of the DropdownButton
 
+The underline at the bottom of the **DropdownButton** widget can be removed wrapping the **DropdownButton** widget using **DropdownButtonHideUnderline** widget
+
+|![](images/Screen%204.png)|
+|:--:|
+|*After removing the underline*|
+
+### Add some styling for dropdown button
+
+
+
+
+```dart
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Dropdown Button"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: Colors.cyan,
+              border: Border.all()),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton(
+                value: _selectedItem,
+                items: _dropdownMenuItems,
+                onChanged: (value) {
+                  setState(() {
+                    _selectedItem = value;
+                  });
+                }),
+          ),
+        ),
+      ),
+    );
+  }
+```
