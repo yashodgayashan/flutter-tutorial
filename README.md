@@ -12,7 +12,9 @@ StatefulWidgets are the widgets where we can change the values on the interface 
 of the interface cannot be changed at the run time. For the example the StatefulWidget is used as we have to change the value on the interface.
 Scaffold is used as a background for this example. Following is the preview of the above code.
 
-![](images/screen%201.png)
+|![](images/screen%201.png)|
+|:-:|
+| *Basic home screen preview* |
 
 **Let's add a basic dropdown button to the screen.**
 
@@ -29,17 +31,23 @@ add padding to the child **DropdownButton** widget. In **DropdownButton** Widget
 
 **Following is the basic drop down button example**
 
-![](images/Code%202.png)
+|![](images/Code%202.png)|
+|:---:| 
+| *Basic dropdown button code* |
 
 As you see the private variable is assigned as **_value** to point and store the current state of the **DropdownButton** widget. The current state of 
 the **_value** is changed once the user changed the value of the dropdown and then the function at the **onChange** attribute is triggered. If someone needs 
 to change the current status of the variable at the runtime then **setState** function should be changed. Once a value changed all the widgets having that 
 value will rerender.Following is the preview of the above code.
 
-![](images/Screenn%202.1.png)
+|![](images/Screenn%202.1.png)|
+|:---:| 
+| *Basic dropdown button preview* |
 
 
-![](images/Screen%202.2.png)
+|![](images/Screen%202.2.png)|
+|:-:|
+| *Basic dropdown button list preview* |
 
 ### Let's get dropdown elements from a list
 
@@ -56,4 +64,6 @@ When the widget mount using init function which called at first **DropdownButton
 |![](images/Code%203.1.png)|
 |:-:|
 |*Dropdown button using external list code*|
+
+### Let's Remove the underline of the DropdownButton
 
