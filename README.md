@@ -5,6 +5,7 @@
 Lets make a flutter application and add a scaffold as the home screen as follows
 
 ![](images/code%201.png)
+*Basic home screen code*
 
 StatefulWidgets are the widgets where we can change the values on the interface at runtime and StetelessWidgets are the widgets where the values 
 of the interface cannot be changed at the run time. For the example the StatefulWidget is used as we have to change the value on the interface.
@@ -35,4 +36,15 @@ to change the current status of the variable at the runtime then **setState** fu
 value will rerender.Following is the preview of the above code.
 
 ![](images/Screenn%202.1.png)
+
+
 ![](images/Screen%202.2.png)
+
+### Let's get dropdown elements from a list
+
+Some cases the dropdown items cannot be hardcoded either it is retrieved form an API or as objects. Let's see how this can be implemented. First lets 
+make a simple class to make listItem objects for the dropdown menu.
+![](images/Code%203.2.png)
+
+Above class will take value and name as parameters and for the example getter and setters and not implemented since this is for explaining purposes.
+
