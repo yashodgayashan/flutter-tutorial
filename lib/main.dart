@@ -46,25 +46,30 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("Dropdown Button"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          padding: const EdgeInsets.only(left: 10.0,right: 10.0),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.cyan,
-              border: Border.all()),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton(
-                value: _selectedItem,
-                items: _dropdownMenuItems,
-                onChanged: (value) {
-                  setState(() {
-                    _selectedItem = value;
-                  });
-                }),
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              padding: const EdgeInsets.only(left: 10.0,right: 10.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.cyan,
+                  border: Border.all()),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                    value: _selectedItem,
+                    items: _dropdownMenuItems,
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedItem = value;
+                      });
+                    }),
+              ),
+            ),
           ),
-        ),
+          Text("You select ${_selectedItem.name}"),
+        ],
       ),
     );
   }
