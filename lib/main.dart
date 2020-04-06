@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      title: "Tutorial",
-      home: Home(),
-    ));
+  title: "Tutorial",
+  home: Home(),
+));
 
 class Home extends StatefulWidget {
   @override
@@ -11,6 +11,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   List<ListItem> _dropdownItems = [
     ListItem(1, "First Value"),
     ListItem(2, "Second Item"),
@@ -25,6 +26,7 @@ class _HomeState extends State<Home> {
     super.initState();
     _dropdownMenuItems = buildDropDownMenuItems(_dropdownItems);
     _selectedItem = _dropdownMenuItems[0].value;
+
   }
 
   List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
@@ -44,33 +46,18 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter tutorial"),
+        title: Text("Dropdown Button"),
       ),
-      body: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  "Dropdown",
-                  style: TextStyle(fontSize: 16.0),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(20.0),
-                child: DropdownButton<ListItem>(
-                    value: _selectedItem,
-                    items: _dropdownMenuItems,
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedItem = value;
-                      });
-                    }),
-              ),
-            ],
-          ),
-        ],
+      body: Container(
+        padding: EdgeInsets.all(20.0),
+        child: DropdownButton<ListItem>(
+            value: _selectedItem,
+            items: _dropdownMenuItems,
+            onChanged: (value) {
+              setState(() {
+                _selectedItem = value;
+              });
+            }),
       ),
     );
   }
