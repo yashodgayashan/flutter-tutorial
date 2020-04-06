@@ -5,7 +5,7 @@
 Lets make a flutter application and add a scaffold as the home screen as follows
 
 |![Basic home screen code](images/code%201.png)|
-|:--:| 
+|---| 
 | *Basic home screen code* |
 
 
