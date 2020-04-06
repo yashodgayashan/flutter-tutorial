@@ -4,8 +4,10 @@
 
 Lets make a flutter application and add a scaffold as the home screen as follows
 
-![Basic home screen code](images/code%201.png)
-*Basic home screen code*
+|![Basic home screen code](images/code%201.png)|
+|:--:| 
+| *Basic home screen code* |
+
 
 StatefulWidgets are the widgets where we can change the values on the interface at runtime and StetelessWidgets are the widgets where the values 
 of the interface cannot be changed at the run time. For the example the StatefulWidget is used as we have to change the value on the interface.
