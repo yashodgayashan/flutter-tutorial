@@ -11,8 +11,36 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _value = 1;
 
+  List<ListItem> _dropdownItems = [
+    ListItem(1, "First Value"),
+    ListItem(2, "Second Item"),
+    ListItem(3, "Third Item"),
+    ListItem(4, "Fourth Item")
+  ];
+
+  List<DropdownMenuItem<ListItem>> _dropdownMenuItems;
+  ListItem _selectedItem;
+
+  void initState() {
+    super.initState();
+    _dropdownMenuItems = buildDropDownMenuItems(_dropdownItems);
+    _selectedItem = _dropdownMenuItems[0].value;
+
+  }
+
+  List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
+    List<DropdownMenuItem<ListItem>> items = List();
+    for (ListItem listItem in listItems) {
+      items.add(
+        DropdownMenuItem(
+          child: Text(listItem.name),
+          value: listItem,
+        ),
+      );
+    }
+    return items;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,29 +50,12 @@ class _HomeState extends State<Home> {
       ),
       body: Container(
         padding: EdgeInsets.all(20.0),
-        child: DropdownButton(
-            value: _value,
-            items: [
-              DropdownMenuItem(
-                child: Text("First Item"),
-                value: 1,
-              ),
-              DropdownMenuItem(
-                child: Text("Second Item"),
-                value: 2,
-              ),
-              DropdownMenuItem(
-                child: Text("Third Item"),
-                value: 3,
-              ),
-              DropdownMenuItem(
-                child: Text("Fourth Item"),
-                value: 4,
-              )
-            ],
+        child: DropdownButton<ListItem>(
+            value: _selectedItem,
+            items: _dropdownMenuItems,
             onChanged: (value) {
               setState(() {
-                _value = value;
+                _selectedItem = value;
               });
             }),
       ),
@@ -52,7 +63,7 @@ class _HomeState extends State<Home> {
   }
 }
 
-class ListItem{
+class ListItem {
   int value;
   String name;
 
