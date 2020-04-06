@@ -11,7 +11,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   List<ListItem> _dropdownItems = [
     ListItem(1, "First Value"),
     ListItem(2, "Second Item"),
@@ -26,7 +25,6 @@ class _HomeState extends State<Home> {
     super.initState();
     _dropdownMenuItems = buildDropDownMenuItems(_dropdownItems);
     _selectedItem = _dropdownMenuItems[0].value;
-
   }
 
   List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
@@ -46,18 +44,28 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dropdown Button"),
+        title: Text("Flutter tutorial"),
       ),
-      body: Container(
-        padding: EdgeInsets.all(20.0),
-        child: DropdownButton<ListItem>(
-            value: _selectedItem,
-            items: _dropdownMenuItems,
-            onChanged: (value) {
-              setState(() {
-                _selectedItem = value;
-              });
-            }),
+      body: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              "Dropdown Button",
+              style: TextStyle(fontSize: 15.0),
+            ),
+          ),
+          Container(
+            child: DropdownButton(
+                value: _selectedItem,
+                items: _dropdownMenuItems,
+                onChanged: (value) {
+                  setState(() {
+                    _selectedItem = value;
+                  });
+                }),
+          ),
+        ],
       ),
     );
   }
