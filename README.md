@@ -28,3 +28,11 @@ add padding to the child **DropdownButton** widget. In **DropdownButton** Widget
 **Following is the basic drop down button example**
 
 ![](images/Code%202.png)
+
+As you see the private variable is assigned as **_value** to point and store the current state of the **DropdownButton** widget. The current state of 
+the **_value** is changed once the user changed the value of the dropdown and then the function at the **onChange** attribute is triggered. If someone needs 
+to change the current status of the variable at the runtime then **setState** function should be changed. Once a value changed all the widgets having that 
+value will rerender.Following is the preview of the above code.
+
+![](images/Screenn%202.1.png)
+![](images/Screen%202.2.png)
