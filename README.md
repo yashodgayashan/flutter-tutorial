@@ -226,8 +226,12 @@ The underline at the bottom of the **DropdownButton** widget can be removed wrap
 
 ### Add some styling for dropdown button
 
+The basic styling for dropdown button can be done using style attribute of the **DropdownButton** widget and other than that boarders and background colors can 
+be added wrapping the **DropdownButton** widget using **Container** widget and then styling the **Container** widget as follows.
 
-
+|![](images/Screen%206.png)|
+|:-:|
+|*After adding boarder and background color*|
 
 ```dart
 @override
@@ -259,3 +263,5 @@ The underline at the bottom of the **DropdownButton** widget can be removed wrap
     );
   }
 ```
+
+Hopefully this is helpful.
