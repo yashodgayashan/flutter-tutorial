@@ -25,11 +25,10 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("Flutter tutorial"),
       ),
-      body: Center(
-          child: Text(
+      body: Text(
         "Lets code",
         style: TextStyle(fontSize: 20.0),
-      )),
+      ),
     );
   }
 }
