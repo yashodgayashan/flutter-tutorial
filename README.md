@@ -227,3 +227,315 @@ tutorial and add a subfolder inside the project folder and add font files files 
 
 |![](images/screen%2010.png)|
 |:-:|
+
+Then you have to update the pubspec.yaml file as follows to add the fonts to the project with the weights indicated in 
+the google font site.
+
+```
+fonts:
+   - family: Caveat
+     fonts:
+       - asset: fonts/Caveat-Regular.ttf
+         weight: 400
+       - asset: fonts/Caveat-Bold.ttf
+         weight: 700
+```
+
+The the following is the sample code to how to add the custom fonts to your project and at there you have to indicate 
+the fontWeights along with the fontFamily or else it will pick up the first font file under the font family name in the 
+pubspec.yaml file.
+
+```
+Text(
+  "Hi There",
+  textAlign: TextAlign.center,
+  style: TextStyle(
+    color: Colors.blue,
+    fontSize: 20.0,
+    fontFamily: "Caveat",
+    fontWeight: FontWeight.w700
+  ),
+Text(
+  "This is regular",
+  textAlign: TextAlign.center,
+  style: TextStyle(
+      color: Colors.blue,
+      fontSize: 40.0,
+      fontFamily: "Caveat",
+      fontWeight: FontWeight.w400),
+)
+```
+
+|![](images/screen%205.png)|
+|:-:|
+|Preview of the above code|
+
+## Let’s do some alignment
+
+Then the problem arise when you need to add more Text widgets on the screen and for that you have to use Row widget and Column widget 
+and there are many more.
+
+### Horizontally add Text widgets
+
+When it comes to add horizontally add more text widget you have to add your Text widgets in an array and wrap them inside a **Row** 
+widget as follows.
+
+```
+Row(
+  children: <Widget>[
+    // Add text widgets here
+  ]
+)
+```
+
+As an example lets take following code.
+
+```
+Row(
+  children: <Widget>[
+    Text(
+      "One",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+          fontSize: 40.0,
+          color: Colors.blue,
+          fontFamily: "Caveat",
+          fontWeight: FontWeight.w700),
+    ),
+    Text(
+      "Two",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+          fontSize: 40.0,
+          color: Colors.blue,
+          fontFamily: "Caveat",
+          fontWeight: FontWeight.w700),
+    ),
+  ],
+),
+```
+
+|![](images/screen%2012.png)|
+|:-:|
+|Preview of the above code|
+
+But as you see the alignment is not happened as there is no space defined and the following problem will occur when the text exceeds 
+the screen size as follows.
+
+|![](images/screen%2013.png)|
+|:-:|
+|When text exceeds the screen size|
+
+When it come to above problem or if you need to divide the screen in to some ratio you have to use **Expanded** widget.
+
+### Avoids overflow using Expanded widget
+
+When you add expanded widgets into the row the row equally divided and it works as a container and if you need to change the ratio 
+you have to change the flex attribute inside the Expanded widget. All the basic alignments are working here.
+
+```
+Row(
+  children: <Widget>[
+    Expanded(
+      child: Text(
+        "One",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontSize: 40.0,
+            color: Colors.blue,
+            fontFamily: "Caveat",
+            fontWeight: FontWeight.w700),
+      ),
+    ),
+    Expanded(
+      child: Text(
+        "Two",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontSize: 40.0,
+            color: Colors.blue,
+            fontFamily: "Caveat",
+            fontWeight: FontWeight.w700),
+      ),
+    ),
+    Expanded(
+      child: Text(
+        "This is a big paragraph",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+            fontSize: 40.0,
+            color: Colors.blue,
+            fontFamily: "Caveat",
+            fontWeight: FontWeight.w700),
+      ),
+    ),
+  ],
+),
+```
+
+|![](images/screen%2014.png)|
+|:-:|
+|Equally divided the screen|
+
+### Vertically add Text Widgets
+
+Text widgets can be added vertically using the **Column** widget, **ListView** widget and many more and for basics the 
+**Column** widget will be used.
+
+```
+Column(
+  children: <Widget>[
+    Text(
+      "One",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+          fontSize: 40.0,
+          color: Colors.blue,
+          fontFamily: "Caveat",
+          fontWeight: FontWeight.w700),
+    ),
+    Text(
+      "Two",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+          fontSize: 40.0,
+          color: Colors.blue,
+          fontFamily: "Caveat",
+          fontWeight: FontWeight.w700),
+    ),
+  ],
+```
+
+|![](images/screen%2015.png)|
+|:-:|
+|Preview of the above code|
+
+## Let’s change text using a button click
+
+For the final section It is good to know how to change a text according to the button click and we need to change a widget at the 
+runtime then let’s make a statefulWidget for that and added a private variable and add it to the text field.
+
+### Assign variable to the Text
+
+>Quick tip : Add a variable to text field
+
+```
+int _variable = 0
+Text("$_variable")
+```
+
+In dart language private variables are begin with a _ mark.
+
+```dart
+import 'package:flutter/material.dart';
+
+class TextAlignScreen extends StatefulWidget {
+  @override
+  _TextAlignScreenState createState() => _TextAlignScreenState();
+}
+
+class _TextAlignScreenState extends State<TextAlignScreen> {
+  int _value = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Text tutorial"),
+      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              "$_value",
+              textScaleFactor: 3.0,
+            ),
+          ),
+          Expanded(
+            child: RaisedButton(
+              onPressed: () {},
+              child: Text("Click"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+In above code the _value private variable is declared to store the integer value and it is added on to 
+the Text widget and button have added to the screen as follows.
+
+|![](images/screen%2016.png)|
+|:-:|
+|Preview of the above code|
+
+### Adding the logic
+
+The logic should be added to the onPressed attribute in the **RaisedButton** widget which will trigger when 
+button is pressed. Important factor is if you need to change a variable at runtime you have to change it 
+inside the set state function as follows.
+
+```
+onPressed: () {
+  setState(() {
+    _value += 1;
+  });
+},
+```
+
+The _value is increase by one when the button is pressed and the final code is as follows.
+
+```
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(
+      title: "Tutorial",
+      home: TextAlignScreen(),
+    ));
+
+class TextAlignScreen extends StatefulWidget {
+  @override
+  _TextAlignScreenState createState() => _TextAlignScreenState();
+}
+
+class _TextAlignScreenState extends State<TextAlignScreen> {
+  int _value = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Text tutorial"),
+      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              "$_value",
+              textScaleFactor: 3.0,
+            ),
+          ),
+          Expanded(
+            child: RaisedButton(
+              onPressed: () {
+                setState(() {
+                  _value += 1;
+                });
+              },
+              child: Text("Click"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+|![](images/screen%2017.png)|
+|:-:|
+|Preview of the above code|
+
+Hopefully this is helpful.
