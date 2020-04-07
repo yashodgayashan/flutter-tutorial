@@ -103,3 +103,127 @@ Widget build(BuildContext context) {
 |:-:|
 |Preview of the above code|
 
+### Font size using textScaleFactor
+
+There are two way of adjust the font size one is using the textScaleFactor in **Text** widget or using TextStyle class which will 
+be discussed in latter part. textScaleFactor attribute takes a double value which is consider as a scaling factor and scale the 
+text as follows.
+
+```
+    Text(
+      "Hi",
+      textAlign: TextAlign.center,
+      textScaleFactor: 4.0,
+    ),
+```
+
+|![](images/screen%203.png)|
+|:-:|
+|Preview of the above code|
+    
+### Style using TextStyle class
+
+**Textstyle** class has to be used to add some styling to the fonts and following is the code to add styles to the Text widget.
+
+```
+Text(
+  "Hi",
+  style: TextStyle(
+    //code here
+  ),
+),
+```
+
+### Adding text colours
+
+Basic colouring can be done using style attribute and there are some advanced colouring mechanisms which will be discussed 
+in another blog post. The **Colors** class can be used for add colours and there are some more methods.
+
+|![](images/screen%204.png)|
+|:-:|
+|Add colours using **Colors** class|
+
+```
+Text(
+  "Hi",
+  textAlign: TextAlign.center,
+  textScaleFactor: 2.0,
+  style: TextStyle(
+    color: Colors.blue
+  ),
+),
+```
+
+|![](images/screen%206.png)|
+|:-:|
+|Preview of the above code|
+
+### Adding font weights
+
+Font weights can also be added using the **Textstyle** class as follows.
+
+```
+style: TextStyle(
+  color: Colors.blue,
+  fontWeight: FontWeight.w300,
+),
+```
+
+Following example will show the preview of adding different font weights to different texts.
+
+|![](images/screen%207.png)|
+|:-:|
+|Preview of different font weights|
+
+### Changing Font size
+
+Another method to change the font size is adding the fontSize attribute which takes the double value as the input. 
+You can use both textScaleFactor and fontSize to change the font size of a text and when you use the both the 
+fontSize will be multiplied by the textScaleFactor and set the font size as the outputted answer.
+
+```
+Text(
+  "Hi",
+  textAlign: TextAlign.center,
+  textScaleFactor: 2.0,
+  style: TextStyle(
+    color: Colors.blue,
+    fontSize: 20.0
+  ),
+),
+```
+
+|![](images/screen%208.png)|
+|:-:|
+|Preview of the above code|
+
+### Adding space between letters and words
+
+TextStyle class facilitate both letter spacing and word spacing using two attributes namely letterSpacing and wordSpacing. 
+Both attributes take double value as the input.
+
+```
+Text(
+  "Hi There",
+  textAlign: TextAlign.center,
+  style: TextStyle(
+    color: Colors.blue,
+    fontWeight: FontWeight.w600,
+    fontSize: 40.0,
+    letterSpacing: 2.0,
+    wordSpacing: 100.0,
+  ),
+),
+```
+
+|![](images/screen%209.png)|
+|:-:|
+|Preview of the above code|
+
+### Adding custom fonts
+
+Before using the custom fonts you have to add them into pubspec.yaml file. I have used the Cavet font in google fonts to this 
+tutorial and add a subfolder inside the project folder and add font files files as follows.
+
+|![](images/screen%2010.png)|
+|:-:|
