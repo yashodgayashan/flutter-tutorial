@@ -63,6 +63,18 @@ flutter:
            weight: 400
          - asset: fonts/Caveat-Bold.ttf
            weight: 700
+     - family: Roboto
+       fonts:
+         - asset: fonts/Roboto-Black.ttf
+           weight: 900
+         - asset: fonts/Roboto-BlackItalic.ttf
+           weight: 900
+           style: italic
+         - asset: fonts/Roboto-Bold.ttf
+           weight: 700
+         - asset: fonts/Roboto-BoldItalic.ttf
+           weight: 700
+           style: italic
 
   #
   # For details regarding fonts from package dependencies,
