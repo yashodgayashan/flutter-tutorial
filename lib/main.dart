@@ -5,80 +5,15 @@ void main() => runApp(MaterialApp(
       home: Home(),
     ));
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
 
-class _HomeState extends State<Home> {
-  List<ListItem> _dropdownItems = [
-    ListItem(1, "First Value"),
-    ListItem(2, "Second Item"),
-    ListItem(3, "Third Item"),
-    ListItem(4, "Fourth Item")
-  ];
-
-  List<DropdownMenuItem<ListItem>> _dropdownMenuItems;
-  ListItem _selectedItem;
-
-  void initState() {
-    super.initState();
-    _dropdownMenuItems = buildDropDownMenuItems(_dropdownItems);
-    _selectedItem = _dropdownMenuItems[0].value;
-  }
-
-  List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List listItems) {
-    List<DropdownMenuItem<ListItem>> items = List();
-    for (ListItem listItem in listItems) {
-      items.add(
-        DropdownMenuItem(
-          child: Text(listItem.name),
-          value: listItem,
-        ),
-      );
-    }
-    return items;
-  }
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter tutorial"),
-      ),
-      body: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  "Dropdown",
-                  style: TextStyle(fontSize: 16.0),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(20.0),
-                child: DropdownButton<ListItem>(
-                    value: _selectedItem,
-                    items: _dropdownMenuItems,
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedItem = value;
-                      });
-                    }),
-              ),
-            ],
-          ),
-        ],
-      ),
+        appBar: AppBar(
+          title: Text("Text tutorial"),
+        ),
+        body:Text("Hi")
     );
   }
-}
-
-class ListItem {
-  int value;
-  String name;
-
-  ListItem(this.value, this.name);
 }
