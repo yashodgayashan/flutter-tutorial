@@ -17,10 +17,11 @@ class TextAlignScreen extends StatelessWidget {
           textScaleFactor: 2.0,
           style: TextStyle(
             color: Colors.blue,
-            fontWeight: FontWeight.w600,
             fontSize: 20.0,
             letterSpacing: 2.0,
-            wordSpacing: 100.0,
+            wordSpacing: 20.0,
+            fontFamily: "Caveat",
+            fontWeight: FontWeight.w700
           ),
         ),
       ),

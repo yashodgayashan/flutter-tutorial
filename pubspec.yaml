@@ -60,7 +60,9 @@ flutter:
      - family: Caveat
        fonts:
          - asset: fonts/Caveat-Regular.ttf
+           weight: 400
          - asset: fonts/Caveat-Bold.ttf
+           weight: 700
 
   #
   # For details regarding fonts from package dependencies,
