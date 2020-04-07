@@ -12,12 +12,15 @@ class TextAlignScreen extends StatelessWidget {
       body: Container(
         width: width,
         child: Text(
-          "Hi",
+          "Hi There",
           textAlign: TextAlign.center,
           textScaleFactor: 2.0,
           style: TextStyle(
             color: Colors.blue,
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w600,
+            fontSize: 20.0,
+            letterSpacing: 2.0,
+            wordSpacing: 100.0,
           ),
         ),
       ),
