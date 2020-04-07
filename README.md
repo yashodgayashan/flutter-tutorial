@@ -26,8 +26,7 @@ class _HomeState extends State<Home> {
         title: Text("Flutter tutorial"),
       ),
       body: Text(
-        "Lets code",
-        style: TextStyle(fontSize: 20.0),
+        "Hi",
       ),
     );
   }
