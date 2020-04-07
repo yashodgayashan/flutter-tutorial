@@ -1,21 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/screens/text_tutorial.dart';
+import 'package:flutter_tutorial/screens/dropdown_screen.dart';
 
 void main() => runApp(MaterialApp(
       title: "Tutorial",
-      home: Home(),
+      home: TextAlignScreen(),
     ));
 
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Text tutorial"),
-      ),
-      body: Text(
-        "Hi",
-        textAlign: TextAlign.center,
-      ),
-    );
-  }
-}
