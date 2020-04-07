@@ -11,18 +11,27 @@ class TextAlignScreen extends StatelessWidget {
       ),
       body: Container(
         width: width,
-        child: Text(
-          "Hi There",
-          textAlign: TextAlign.center,
-          textScaleFactor: 2.0,
-          style: TextStyle(
-            color: Colors.blue,
-            fontSize: 20.0,
-            letterSpacing: 2.0,
-            wordSpacing: 20.0,
-            fontFamily: "Caveat",
-            fontWeight: FontWeight.w700
-          ),
+        child: Column(
+          children: <Widget>[
+            Text(
+              "One",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.blue,
+                  fontFamily: "Caveat",
+                  fontWeight: FontWeight.w700),
+            ),
+            Text(
+              "Two",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.blue,
+                  fontFamily: "Caveat",
+                  fontWeight: FontWeight.w700),
+            ),
+          ],
         ),
       ),
     );
