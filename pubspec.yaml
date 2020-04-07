@@ -70,10 +70,10 @@ flutter:
          - asset: fonts/Roboto-BlackItalic.ttf
            weight: 900
            style: italic
-         - asset: fonts/Roboto-Bold.ttf
-           weight: 700
-         - asset: fonts/Roboto-BoldItalic.ttf
-           weight: 700
+         - asset: fonts/Roboto-Medium.ttf
+           weight: 500
+         - asset: fonts/Roboto-MediumItalic.ttf
+           weight: 500
            style: italic
 
   #

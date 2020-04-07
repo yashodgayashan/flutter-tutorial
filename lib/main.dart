@@ -30,6 +30,27 @@ class Home extends StatelessWidget {
               fontFamily: "Roboto",
               fontWeight: FontWeight.w900,
             ),
+          ),
+          Text(
+            "Medium Italic",
+            textScaleFactor: 1.5,
+            style: TextStyle(
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.w500,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          Text(
+            "Medium only",
+            textScaleFactor: 1.5,
+            style: TextStyle(
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Text(
+            "Normal font",
+            textScaleFactor: 1.5,
           )
         ],
       ),
