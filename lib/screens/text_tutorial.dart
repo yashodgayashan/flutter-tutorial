@@ -14,7 +14,10 @@ class TextAlignScreen extends StatelessWidget {
         child: Text(
           "Hi",
           textAlign: TextAlign.center,
-          textScaleFactor: 4.0,
+          textScaleFactor: 2.0,
+          style: TextStyle(
+            color: Colors.blue
+          ),
         ),
       ),
     );
