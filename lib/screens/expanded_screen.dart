@@ -16,8 +16,18 @@ class ExpandedScreen extends StatelessWidget {
               color: Colors.grey[300],
               child: Row(
                 children: <Widget>[
-                  Text("One"),
-                  Text("Two"),
+                  Expanded(
+                    child: Text(
+                      "One",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Two",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -28,7 +38,7 @@ class ExpandedScreen extends StatelessWidget {
               color: Colors.grey[600],
               child: Row(
                 children: <Widget>[
-                  Text("One"),
+                  Text(""),
                   Text("Two"),
                 ],
               ),
