@@ -10,6 +10,22 @@ class ExpandedScreen extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: Text("One"),
+              ),
+              Expanded(
+                flex: 2,
+                child: Text("Two"),
+              ),
+              Expanded(
+                flex: 3,
+                child: Text("Three"),
+              ),
+            ],
+          ),
           Expanded(
             flex: 1,
             child: Container(
