@@ -38,8 +38,19 @@ class ExpandedScreen extends StatelessWidget {
               color: Colors.grey[600],
               child: Row(
                 children: <Widget>[
-                  Text(""),
-                  Text("Two"),
+                  Expanded(
+                    child: Text(
+                      "Ratio is 3",
+                      textAlign: TextAlign.center,
+                    ),
+                    flex: 3,
+                  ),
+                  Expanded(
+                      child: Text(
+                        "Ratio is 2",
+                        textAlign: TextAlign.center,
+                      ),
+                      flex: 2),
                 ],
               ),
             ),
