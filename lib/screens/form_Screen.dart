@@ -26,6 +26,10 @@ class _FormScreenState extends State<FormScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide: BorderSide(color: Colors.black, width: 2.0),
                   ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                  ),
                 ),
               ),
             ),
@@ -38,6 +42,10 @@ class _FormScreenState extends State<FormScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
                   ),
                 ),
               ),
