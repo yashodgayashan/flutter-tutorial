@@ -22,6 +22,10 @@ class _FormScreenState extends State<FormScreen> {
                 decoration: InputDecoration(
                   labelText: 'UserName',
                   hintText: "YashodPerera",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
                 ),
               ),
             ),
@@ -31,6 +35,10 @@ class _FormScreenState extends State<FormScreen> {
                 decoration: InputDecoration(
                   labelText: 'email',
                   hintText: "yashodperera@yahoo.com",
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
                 ),
               ),
             ),
