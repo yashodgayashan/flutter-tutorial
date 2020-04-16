@@ -21,6 +21,7 @@ class _FormScreenState extends State<FormScreen> {
               child: TextField(
                 decoration: InputDecoration(
                   labelText: 'UserName',
+                  prefixIcon: Icon(Icons.person),
                   hintText: "YashodPerera",
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -39,6 +40,7 @@ class _FormScreenState extends State<FormScreen> {
                 decoration: InputDecoration(
                   labelText: 'email',
                   hintText: "yashodperera@yahoo.com",
+                  prefixIcon: Icon(Icons.email),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide: BorderSide(color: Colors.black, width: 2.0),
