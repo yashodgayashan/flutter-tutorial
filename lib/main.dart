@@ -5,7 +5,6 @@ void main() => runApp(MaterialApp(
       home: FormScreen(),
     ));
 
-
 class FormScreen extends StatefulWidget {
   @override
   _FormScreenState createState() => _FormScreenState();
@@ -13,6 +12,8 @@ class FormScreen extends StatefulWidget {
 
 class _FormScreenState extends State<FormScreen> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class _FormScreenState extends State<FormScreen> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextFormField(
+                controller: nameController,
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Please enter userName';
@@ -57,7 +59,7 @@ class _FormScreenState extends State<FormScreen> {
                   focusedErrorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide:
-                    BorderSide(color: Colors.deepOrangeAccent, width: 2.0),
+                        BorderSide(color: Colors.deepOrangeAccent, width: 2.0),
                   ),
                 ),
               ),
@@ -65,6 +67,7 @@ class _FormScreenState extends State<FormScreen> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextFormField(
+                controller: ageController,
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Please enter age';
@@ -95,7 +98,7 @@ class _FormScreenState extends State<FormScreen> {
                   focusedErrorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide:
-                    BorderSide(color: Colors.deepOrangeAccent, width: 2.0),
+                        BorderSide(color: Colors.deepOrangeAccent, width: 2.0),
                   ),
                 ),
               ),
@@ -103,7 +106,8 @@ class _FormScreenState extends State<FormScreen> {
             RaisedButton(
               onPressed: () {
                 if (_formKey.currentState.validate()) {
-                  debugPrint("Valid");
+                  debugPrint("Name is ${nameController.text}");
+                  debugPrint("Age is ${ageController.text}");
                 }
               },
               child: Text("Submit"),
