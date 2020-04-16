@@ -16,11 +16,23 @@ class _FormScreenState extends State<FormScreen> {
         child: ListView(
           padding: EdgeInsets.all(10.0),
           children: <Widget>[
-            TextField(
-              decoration: InputDecoration(labelText: 'UserName'),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'UserName',
+                  hintText: "YashodPerera",
+                ),
+              ),
             ),
-            TextFormField(
-              decoration: InputDecoration(labelText: 'UserName'),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'email',
+                  hintText: "yashodperera@yahoo.com",
+                ),
+              ),
             ),
             RaisedButton(
               onPressed: () {},
