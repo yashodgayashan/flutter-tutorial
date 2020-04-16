@@ -12,7 +12,23 @@ class _FormScreenState extends State<FormScreen> {
       appBar: AppBar(
         title: Text("Basic form"),
       ),
-      body: Form(child: ListView()),
+      body: Form(
+        child: ListView(
+          padding: EdgeInsets.all(10.0),
+          children: <Widget>[
+            TextField(
+              decoration: InputDecoration(labelText: 'UserName'),
+            ),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'UserName'),
+            ),
+            RaisedButton(
+              onPressed: () {},
+              child: Text("Submit"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
