@@ -6,6 +6,9 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController ageController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +22,7 @@ class _FormScreenState extends State<FormScreen> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextField(
+                controller: nameController,
                 decoration: InputDecoration(
                   labelText: 'UserName',
                   prefixIcon: Icon(Icons.person),
@@ -41,10 +45,12 @@ class _FormScreenState extends State<FormScreen> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextFormField(
+                controller: ageController,
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'email',
-                  hintText: "yashodperera@yahoo.com",
-                  prefixIcon: Icon(Icons.email),
+                  labelText: 'Age',
+                  hintText: "20",
+                  prefixIcon: Icon(Icons.date_range),
                   suffixIcon: Icon(
                     Icons.delete_outline,
                     color: Colors.red,
@@ -61,9 +67,11 @@ class _FormScreenState extends State<FormScreen> {
               ),
             ),
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                debugPrint("${nameController.text}");
+              },
               child: Text("Submit"),
-            )
+            ),
           ],
         ),
       ),
