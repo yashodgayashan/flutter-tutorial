@@ -6,8 +6,7 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController ageController = TextEditingController();
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +15,19 @@ class _FormScreenState extends State<FormScreen> {
         title: Text("Basic form"),
       ),
       body: Form(
+        key: _formKey,
         child: ListView(
           padding: EdgeInsets.all(10.0),
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                controller: nameController,
+              child: TextFormField(
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter userName';
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
                   labelText: 'UserName',
                   prefixIcon: Icon(Icons.person),
@@ -39,13 +44,27 @@ class _FormScreenState extends State<FormScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide: BorderSide(color: Colors.blue, width: 2.0),
                   ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.red, width: 2.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide:
+                        BorderSide(color: Colors.deepOrangeAccent, width: 2.0),
+                  ),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextFormField(
-                controller: ageController,
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter age';
+                  }
+                  return null;
+                },
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: 'Age',
@@ -63,12 +82,23 @@ class _FormScreenState extends State<FormScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     borderSide: BorderSide(color: Colors.blue, width: 2.0),
                   ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.red, width: 2.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide:
+                        BorderSide(color: Colors.deepOrangeAccent, width: 2.0),
+                  ),
                 ),
               ),
             ),
             RaisedButton(
               onPressed: () {
-                debugPrint("${nameController.text}");
+                if (_formKey.currentState.validate()) {
+                  debugPrint("Valid");
+                }
               },
               child: Text("Submit"),
             ),
